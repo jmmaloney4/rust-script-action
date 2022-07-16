@@ -1,0 +1,12 @@
+name: 'rust-script action'
+description: 'run something with rust-script'
+inputs:
+  path:
+    description: 'path of rust-script to run'
+    required: true
+    default: 'main.rs'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path }}
